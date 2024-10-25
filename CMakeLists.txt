@@ -12,4 +12,4 @@ include_directories(./include ./include/config/${CONFIG_SUFFIX})
 
 set(SRC "./src")
 
-add_library(os ${LIBTYPE} ${SRC}/cwalk.c ${SRC}/os.cpp "${SRC}/path.cpp")
+add_library(os ${LIBTYPE} ${SRC}/cwalk.c ${SRC}/os.cpp "${SRC}/path.cpp" ${SRC}/join.cpp)
