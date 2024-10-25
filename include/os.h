@@ -11,6 +11,14 @@
 
 namespace os
 {
+    namespace path
+    {
+        OS_PUBLIC bool exists(const char *path, bool follow_symlinks = true);
+        OS_PUBLIC bool is_dir(const char *path, bool follow_symlinks = true);
+        OS_PUBLIC bool is_file(const char *path, bool follow_symlinks = true);
+        OS_PUBLIC bool is_link(const char *path);
+    }
+
     #ifdef _WIN32
     const char SEP = '\\';
     #else
