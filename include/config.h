@@ -11,4 +11,8 @@
 #define OS_IMPORT __attribute__ ((visibility("default")))
 #endif
 
+#if defined(_WIN32) && defined(__TINYC__)
+#define __declspec(x) __attribute__((x))
+#endif
+
 #endif
