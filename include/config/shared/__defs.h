@@ -7,4 +7,6 @@
 #define OS_PUBLIC OS_IMPORT
 #endif
 
+#undef __OS_LIB_EXPORT
+
 #endif
