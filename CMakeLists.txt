@@ -5,6 +5,7 @@ if (NOT DEFINED LIBTYPE)
     set(LIBTYPE "SHARED")
 endif(NOT DEFINED LIBTYPE)
 
+string(TOUPPER ${LIBTYPE} LIBTYPE)
 string(TOLOWER ${LIBTYPE} CONFIG_SUFFIX)
 
 include_directories(./include ./include/config/${CONFIG_SUFFIX})
