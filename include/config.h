@@ -6,9 +6,12 @@
 #ifdef _WIN32
 #define OS_EXPORT __declspec(dllexport)
 #define OS_IMPORT __declspec(dllimport)
-#else
+#elif __GNUC__ >= 4
 #define OS_EXPORT __attribute__ ((visibility("default")))
 #define OS_IMPORT __attribute__ ((visibility("default")))
+#else
+#define OS_EXPORT
+#define OS_IMPORT
 #endif
 
 #if defined(_WIN32) && defined(__TINYC__)
