@@ -16,7 +16,7 @@ namespace os
         OS_PUBLIC bool exists(const char *path, bool follow_symlinks = true);
         OS_PUBLIC bool is_dir(const char *path, bool follow_symlinks = true);
         OS_PUBLIC bool is_file(const char *path, bool follow_symlinks = true);
-        OS_PUBLIC bool is_link(const char *path);
+        OS_PUBLIC bool is_symlink(const char *path);
     }
 
     #ifdef _WIN32
