@@ -1,4 +1,4 @@
-<h1>os::path::join</h1>
+<h1>os::path::exists</h1>
 <h2>Syntax</h2>
 
 ```C++
