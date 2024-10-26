@@ -8,13 +8,13 @@ endif(NOT DEFINED LIBTYPE)
 string(TOUPPER ${LIBTYPE} LIBTYPE)
 string(TOLOWER ${LIBTYPE} CONFIG_SUFFIX)
 
-include_directories(./include ./include/config/${CONFIG_SUFFIX})
+include_directories(./include/${CONFIG_SUFFIX})
 
 set(SRC "./src")
 
 add_library(os ${LIBTYPE} ${SRC}/cwalk.c ${SRC}/os.cpp "${SRC}/path.cpp" ${SRC}/join.cpp)
 
-set_target_properties(os PROPERTIES PUBLIC_HEADER install/${CONFIG_SUFFIX}/os.h)
+set_target_properties(os PROPERTIES PUBLIC_HEADER include/${CONFIG_SUFFIX}/os.h)
 set_target_properties(os PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR})
 set_target_properties(os PROPERTIES VERSION ${PROJECT_VERSION})
 
