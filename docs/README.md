@@ -10,4 +10,6 @@
 
 <a href="./is_dir.md">os::path::is_dir</a>
 
+<a href="./is_file.md">os::path::is_file</a>
+
 <a href="./is_symlink.md">os::path::is_symlink</a>
