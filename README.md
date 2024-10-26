@@ -30,3 +30,22 @@ The maximum length of the path in characters.
 <h3>Return value</h3>
 
 returns 0 if successfully, 1 overwise.
+
+* <h2>os::chdir</h2>
+<h3>Syntax</h3>
+
+```C++
+int os::chdir(
+    const char *newpath
+);
+```
+
+<h3>Parameters</h3>
+
+`newpath`
+
+The new working directory's path.
+
+<h3>Return value</h3>
+
+returns 0 if successfully, -1 overwise.
