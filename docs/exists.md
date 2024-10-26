@@ -3,7 +3,8 @@
 
 ```C++
 int os::path::exists(
-    const char *path
+    const char *path,
+    bool follow_symlinks = true
 );
 ```
 
