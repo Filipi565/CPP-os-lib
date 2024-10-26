@@ -13,7 +13,7 @@
 ```C++
 int os::getcwd(
     char *buffer,
-    size_t buffer_size
+    size_t maxlength
 );
 ```
 
@@ -23,7 +23,7 @@ int os::getcwd(
 
 Storage location for the cwd.
 
-`buffer_size`
+`maxlength`
 
 The maximum length of the path in characters.
 
