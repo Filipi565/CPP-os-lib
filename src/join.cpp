@@ -11,7 +11,12 @@ using namespace std;
 OS_PUBLIC int os::path::join(char *buff, size_t s, const initializer_list<const char *> &parts)
 {
     string temp;
-    const char **paths = new const char*[parts.size()+1];
+    const char **paths = (const char **)malloc((parts.size()+1) * sizeof(void *));
+
+    if (paths == nullptr)
+    {
+        return 1;
+    }
 
     if (!parts.size())
     {
