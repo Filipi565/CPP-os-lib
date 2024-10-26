@@ -2,7 +2,7 @@
 <h2>Syntax</h2>
 
 ```C++
-int os::path::exists(
+bool os::path::exists(
     const char *path,
     bool follow_symlinks = true
 );
