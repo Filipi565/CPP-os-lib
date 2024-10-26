@@ -1,5 +1,4 @@
 #define __OS_LIB_EXPORT
-#include <config.h>
 #include "cwalk.h"
 #include <os.h>
 
