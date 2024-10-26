@@ -2,7 +2,7 @@
 <h2>Syntax</h2>
 
 ```C++
-int os::path::is_symlink(
+bool os::path::is_symlink(
     const char *path
 );
 ```
