@@ -7,3 +7,7 @@
 <a href="./join.md">os::path::join</a>
 
 <a href="./exists.md">os::path::exists</a>
+
+<a href="./is_dir.md">os::path::is_dir</a>
+
+<a href="./is_symlink.md">os::path::is_symlink</a>
