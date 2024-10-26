@@ -15,7 +15,7 @@ namespace os
 {
     namespace path
     {
-        OS_PUBLIC int join(char *buffer, size_t buffer_size, const std::initializer_list<const char *> &);
+        OS_PUBLIC int join(char *buffer, size_t maxlength, const std::initializer_list<const char *> &);
         OS_PUBLIC bool exists(const char *path, bool follow_symlinks = true);
         OS_PUBLIC bool is_dir(const char *path, bool follow_symlinks = true);
         OS_PUBLIC bool is_file(const char *path, bool follow_symlinks = true);
@@ -30,7 +30,7 @@ namespace os
 
     const char ALTSEP = '/'; // Always '/'
 
-    OS_PUBLIC int getcwd(char *buffer, size_t buffer_size);
+    OS_PUBLIC int getcwd(char *buffer, size_t maxlength);
     OS_PUBLIC int chdir(const char *path);
 }
 
