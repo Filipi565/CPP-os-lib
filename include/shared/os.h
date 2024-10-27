@@ -31,6 +31,8 @@
 #include <stddef.h>
 
 #include <initializer_list>
+#include <string>
+#include <vector>
 
 namespace os
 {
@@ -53,6 +55,8 @@ namespace os
 
     OS_PUBLIC int getcwd(char *buffer, size_t maxlength);
     OS_PUBLIC int chdir(const char *path);
+
+    OS_PUBLIC std::vector<std::string> listdir(const char *path);
 }
 
 #endif
