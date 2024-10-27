@@ -12,7 +12,8 @@ include_directories(./include/${CONFIG_SUFFIX})
 
 set(SRC "./src")
 
-add_library(os ${LIBTYPE} ${SRC}/cwalk.c ${SRC}/os.cpp "${SRC}/path.cpp" ${SRC}/join.cpp)
+add_library(os ${LIBTYPE} ${SRC}/cwalk.c ${SRC}/os.cpp "${SRC}/path.cpp" ${SRC}/join.cpp
+            ${SRC}/listdir.cpp)
 
 set_target_properties(os PROPERTIES PUBLIC_HEADER include/${CONFIG_SUFFIX}/os.h)
 set_target_properties(os PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR})
