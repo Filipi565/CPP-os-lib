@@ -1,7 +1,12 @@
 #ifndef _OS_H_
 #define _OS_H_
 
-#define OS_PUBLIC
+#ifdef __OS_LIB_EXPORT
+#define OS_PUBLIC OS_EXPORT
+#else
+#define OS_PUBLIC OS_IMPORT
+#endif
+
 
 #undef __OS_LIB_EXPORT
 #ifdef _WIN32
@@ -26,6 +31,8 @@
 #include <stddef.h>
 
 #include <initializer_list>
+#include <string>
+#include <vector>
 
 namespace os
 {
@@ -48,6 +55,8 @@ namespace os
 
     OS_PUBLIC int getcwd(char *buffer, size_t maxlength);
     OS_PUBLIC int chdir(const char *path);
+
+    OS_PUBLIC std::vector<std::string> listdir(const char *path);
 }
 
 #endif
