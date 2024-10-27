@@ -14,6 +14,22 @@ OS_PUBLIC int os::path::join(char *buff, size_t s, const initializer_list<const 
     {
         string temp;
 
+        auto first = (*parts.begin());
+
+        bool need_cwd = (
+            first[0] == '.' && (IS_SEP(first[1]) ||
+            first[1] == '.' && IS_SEP(first[2]))
+        );
+
+        if (need_cwd)
+        {
+            char cwd[FILENAME_MAX];
+            os::getcwd(cwd, FILENAME_MAX);
+
+            temp = cwd;
+            temp += os::SEP;
+        }
+
         for (auto part : parts)
         {
             temp += part;
