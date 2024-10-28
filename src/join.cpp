@@ -40,11 +40,7 @@ OS_PUBLIC int os::path::join(char *buff, size_t s, const initializer_list<const 
 
         temp.pop_back(); // Remove trailing separator
 
-        char new_buff[OS_PATH_MAX];
-
-        std::char_traits<char>::copy(new_buff, temp.c_str(), min(OS_PATH_MAX, temp.size()));
-
-        cwk_path_normalize(new_buff, buff, s);
+        cwk_path_normalize(temp.c_str(), buff, s);
     }
     catch (const exception &)
     {
