@@ -46,7 +46,7 @@ OS_PUBLIC int os::path::join(char *buff, size_t s, const initializer_list<const 
 
         cwk_path_normalize(new_buff, buff, s);
     }
-    catch (const exception &e)
+    catch (const exception &)
     {
         return 1;
     }
