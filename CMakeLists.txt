@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project("C++ OS lib" VERSION 1.0.0)
+project("C++ OS lib" VERSION 1.1.0)
 
 if (NOT DEFINED LIBTYPE)
     set(LIBTYPE "SHARED")
