@@ -4,7 +4,10 @@
 #include "names.h"
 
 #define STAT NAME(stat)
-#define LSTAT NAME(lstat)
+
+#if defined(_WIN32)
+#include "winstat.h"
+#endif
 
 namespace os
 {
