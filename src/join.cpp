@@ -6,6 +6,8 @@
 
 #define IS_SEP(o) (o == os::SEP || o == os::ALTSEP)
 
+#define OS_PATH_MAX ((std::size_t)4096)
+
 using namespace std;
 
 OS_PUBLIC int os::path::join(char *buff, size_t s, const initializer_list<const char *> &parts)
@@ -23,8 +25,8 @@ OS_PUBLIC int os::path::join(char *buff, size_t s, const initializer_list<const 
 
         if (need_cwd)
         {
-            char cwd[FILENAME_MAX];
-            os::getcwd(cwd, FILENAME_MAX);
+            char cwd[OS_PATH_MAX];
+            os::getcwd(cwd, OS_PATH_MAX);
 
             temp = cwd;
             temp += os::SEP;
@@ -38,9 +40,9 @@ OS_PUBLIC int os::path::join(char *buff, size_t s, const initializer_list<const 
 
         temp.pop_back(); // Remove trailing separator
 
-        char new_buff[FILENAME_MAX];
+        char new_buff[OS_PATH_MAX];
 
-        std::char_traits<char>::copy(new_buff, temp.c_str(), min(s, temp.size()));
+        std::char_traits<char>::copy(new_buff, temp.c_str(), min(OS_PATH_MAX, temp.size()));
 
         cwk_path_normalize(new_buff, buff, s);
     }
