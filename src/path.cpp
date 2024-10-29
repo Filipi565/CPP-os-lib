@@ -5,6 +5,10 @@
 
 #define STAT NAME(stat)
 
+#if defined(_WIN32)
+#include "winstat.h"
+#endif
+
 namespace os
 {
     namespace path
