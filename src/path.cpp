@@ -4,7 +4,6 @@
 #include "names.h"
 
 #define STAT NAME(stat)
-#define LSTAT NAME(lstat)
 
 namespace os
 {
