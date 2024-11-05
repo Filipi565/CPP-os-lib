@@ -9,6 +9,9 @@
 #include "winstat.h"
 #endif
 
+#include <sys/types.h>
+#include <sys/stat.h>
+
 namespace os
 {
     namespace path

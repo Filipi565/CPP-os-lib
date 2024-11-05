@@ -24,9 +24,6 @@
 #define __declspec(x) __attribute__((x))
 #endif
 
-#include <sys/types.h>
-#include <sys/stat.h>
-
 #define __need_size_t
 #include <stddef.h>
 
