@@ -1,12 +1,7 @@
 #ifndef _OS_H_
 #define _OS_H_
 
-#ifdef __OS_LIB_EXPORT
-#define OS_PUBLIC OS_EXPORT
-#else
-#define OS_PUBLIC OS_IMPORT
-#endif
-
+#define OS_PUBLIC
 
 #undef __OS_LIB_EXPORT
 #ifdef _WIN32
