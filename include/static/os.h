@@ -1,12 +1,7 @@
 #ifndef _OS_H_
 #define _OS_H_
 
-#ifdef __OS_LIB_EXPORT
-#define OS_PUBLIC OS_EXPORT
-#else
-#define OS_PUBLIC OS_IMPORT
-#endif
-
+#define OS_PUBLIC
 
 #undef __OS_LIB_EXPORT
 #ifdef _WIN32
@@ -36,10 +31,9 @@ namespace os
     namespace path
     {
         OS_PUBLIC int join(char *buffer, size_t maxlength, const std::initializer_list<const char *> &);
-        OS_PUBLIC bool exists(const char *path, bool follow_symlinks = true);
-        OS_PUBLIC bool is_dir(const char *path, bool follow_symlinks = true);
-        OS_PUBLIC bool is_file(const char *path, bool follow_symlinks = true);
-        OS_PUBLIC bool is_symlink(const char *path);
+        OS_PUBLIC bool exists(const char *path);
+        OS_PUBLIC bool is_dir(const char *path);
+        OS_PUBLIC bool is_file(const char *path);
     }
 
     #ifdef _WIN32
