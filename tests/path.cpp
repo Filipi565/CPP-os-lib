@@ -7,7 +7,7 @@ int main(int, const char *argv[])
 
     os::path::join(buffer, 4096, {argv[0], ".."});
 
-    std::cout << "File: " << buffer << '\n';
+    std::cout << "Path: " << buffer << '\n';
     std::cout << "Exists: " << os::path::exists(buffer) << '\n';
     std::cout << "Is dir: " << os::path::is_dir(buffer) << '\n';
     std::cout << "Is file: " << os::path::is_file(buffer) << '\n';
