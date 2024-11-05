@@ -3,13 +3,13 @@
 
 int main(void)
 {
-    char buffer[FILENAME_MAX];
-    os::getcwd(buffer, FILENAME_MAX);
+    char buffer[4096];
+    os::getcwd(buffer, 4096);
 
     std::cout << "Current working directory: " << buffer << '\n';
 
     os::chdir("..");
-    os::getcwd(buffer, FILENAME_MAX);
+    os::getcwd(buffer, 4096);
 
     std::cout << "Changed working directory: " << buffer << '\n';
     
