@@ -46,4 +46,10 @@ make
 sudo make install
 ```
 
+* <h3>Update your libraries</h3>
+
+```bash
+sudo ldconfig
+```
+
 <h1 id="Windows">MSVC Windows</h2>
