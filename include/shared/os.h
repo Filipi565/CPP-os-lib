@@ -38,6 +38,7 @@ namespace os
         OS_PUBLIC int join(char *buffer, size_t maxlength, const std::initializer_list<const char *> &);
         OS_PUBLIC bool exists(const char *path);
         OS_PUBLIC bool is_dir(const char *path);
+        OS_PUBLIC bool is_file(const char *path);
     }
 
     #ifdef _WIN32
