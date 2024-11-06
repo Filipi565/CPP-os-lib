@@ -36,7 +36,7 @@ cmake .. # configure to build the lirary as shared object
 <h4>If you want to build a static version of the lib just run:</h4>
 
 ```bash
-cmake .. -DLIBTYPE=STATIC # configure to build the lirary as statc object
+cmake .. -DLIBTYPE=STATIC # configure to build the lirary as static object
 ```
 
 * <h3>Build and install the library</h3>
