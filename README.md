@@ -6,7 +6,6 @@
 * <a href="./docs/README.md">Documentation</a>
 * <a href="#Building">How to Build</a>
     * [GNU Linux](#Linux)
-    * [MSVC Windows](#Windows)
 
 # Building
 
@@ -51,5 +50,3 @@ sudo make install
 ```bash
 sudo ldconfig
 ```
-
-<h1 id="Windows">MSVC Windows</h2>
