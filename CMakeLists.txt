@@ -8,6 +8,14 @@ endif(NOT DEFINED LIBTYPE)
 string(TOUPPER ${LIBTYPE} LIBTYPE)
 string(TOLOWER ${LIBTYPE} CONFIG_SUFFIX)
 
+if (${LIBTYPE} STREQUAL "SHARED")
+    set(SRC "")
+elseif(${LIBTYPE} STREQUAL "STATIC")
+    set(SRC "")
+else()
+    message(FATAL_ERROR "expected LIBTYPE to be STATIC or SHARED, not ${LIBTYPE}")
+endif(${LIBTYPE} STREQUAL "SHARED")
+
 include_directories(./include/${CONFIG_SUFFIX})
 
 set(SRC "./src")
