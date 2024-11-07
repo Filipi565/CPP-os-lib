@@ -3,8 +3,7 @@
 
 ```C++
 bool os::path::is_file(
-    const char *path,
-    bool follow_symlinks = true
+    const char *path
 );
 ```
 
@@ -13,12 +12,6 @@ bool os::path::is_file(
 `path`
 
 The path to check
-
-`follow_symlinks`
-
-A boolean indicating whether to follow symbolic
-links when checking if the path is a regular file.
-Default value is true.
 
 <h2>Return value</h2>
 
