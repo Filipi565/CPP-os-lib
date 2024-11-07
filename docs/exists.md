@@ -3,8 +3,7 @@
 
 ```C++
 bool os::path::exists(
-    const char *path,
-    bool follow_symlinks = true
+    const char *path
 );
 ```
 
@@ -13,10 +12,6 @@ bool os::path::exists(
 `path`
 
 A string representing the path to check.
-
-`follow_symlinks`
-
-A boolean indicating whether to follow symbolic links when checking the existence of the path. Default value is true.
 
 <h2>Return value</h2>
 
