@@ -1,4 +1,3 @@
-#define __OS_LIB_EXPORT
 #include <stdexcept>
 #include <os.h>
 
