@@ -5,7 +5,7 @@
 
 #define IS_SEP(o) (o == os::SEP || o == os::ALTSEP)
 
-#define OS_PATH_MAX ((std::size_t)4096)
+#define OS_PATH_MAX 4096
 
 using namespace std;
 
