@@ -1,7 +1,13 @@
 #ifndef _OS_H_
 #define _OS_H_
 
-#define OS_PUBLIC
+#ifdef __OS_SHARED
+#ifdef __OS_LIB_EXPORT
+#define OS_PUBLIC OS_EXPORT
+#else
+#define OS_PUBLIC OS_IMPORT
+#endif
+#endif // __OS_SHARED
 
 #undef __OS_LIB_EXPORT
 #ifdef _WIN32
@@ -9,10 +15,14 @@
 #define OS_IMPORT __declspec(dllimport)
 #elif __GNUC__ >= 4
 #define OS_EXPORT __attribute__ ((visibility("default")))
-#define OS_IMPORT __attribute__ ((visibility("default")))
+#define OS_IMPORT
 #else
 #define OS_EXPORT
 #define OS_IMPORT
+#endif
+
+#ifndef OS_PUBLIC
+#define OS_PUBLIC
 #endif
 
 #if defined(_WIN32) && defined(__TINYC__)
