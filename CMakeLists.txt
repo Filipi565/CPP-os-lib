@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project("C++ OS lib" VERSION 1.3.0)
+project("C++ OS lib" VERSION 1.3.1)
 
 if (NOT DEFINED LIBTYPE)
     set(LIBTYPE "SHARED")
@@ -9,21 +9,23 @@ string(TOUPPER ${LIBTYPE} LIBTYPE)
 string(TOLOWER ${LIBTYPE} CONFIG_SUFFIX)
 
 if (${LIBTYPE} STREQUAL "SHARED")
-    set(SRC "")
+    add_definitions(-D__OS_SHARED)
 elseif(${LIBTYPE} STREQUAL "STATIC")
-    set(SRC "")
+    set(SRC "") # just a placeholder
 else()
     message(FATAL_ERROR "expected LIBTYPE to be STATIC or SHARED, not ${LIBTYPE}")
 endif(${LIBTYPE} STREQUAL "SHARED")
 
-include_directories(./include/${CONFIG_SUFFIX})
+add_definitions(-D__OS_LIB_EXPORT)
+
+include_directories(./include)
 
 set(SRC "./src")
 
 add_library(os ${LIBTYPE} ${SRC}/cwalk.c ${SRC}/os.cpp "${SRC}/path.cpp" ${SRC}/join.cpp
             ${SRC}/listdir.cpp)
 
-set_target_properties(os PROPERTIES PUBLIC_HEADER include/${CONFIG_SUFFIX}/os.h)
+set_target_properties(os PROPERTIES PUBLIC_HEADER include/os.h)
 set_target_properties(os PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR})
 set_target_properties(os PROPERTIES VERSION ${PROJECT_VERSION})
 
